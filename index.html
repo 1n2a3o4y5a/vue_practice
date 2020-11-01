@@ -10,17 +10,26 @@
     <div id="app">
         <p>{{number}}回クリック</p>
         <button v-on:click="plus">クリック</button>
+        <p v-on:mousemove="change">aaaaaaaaaaaaaa</p>
+        <p>x:{{x}} y:{{y}}</p>
     </div>
 
     <script>
         new Vue ({
             el: "#app",
             data: {
-                number: 0
+                number: 0,
+                x: 0,
+                y: 0,
             },
             methods: {
                 plus: function() {
                     this.number = this.number + 1
+                },
+                change: function(event) {
+                    this.x = event.clientX,
+                    this.y = event.clientY,
+                    console.log(event);
                 }
             }
         })
