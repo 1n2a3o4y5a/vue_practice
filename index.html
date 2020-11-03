@@ -10,8 +10,11 @@
     <div id="app">
         <p>{{number}}回クリック</p>
         <button v-on:click="plus">クリック</button>
-        <p v-on:mousemove="change">aaaaaaaaaaaaaa</p>
+        <p v-on:mousemove="change">aaaaaaaaaaaaaa
+            <span v-on:mousemove.stop>jjjjjjjjjjjjjjjjjj</span>
+        </p>
         <p>x:{{x}} y:{{y}}</p>
+        <input type="text" @keydown.enter="myAlert">
     </div>
 
     <script>
@@ -27,8 +30,11 @@
                     this.number = this.number + 1
                 },
                 change: function(event) {
-                    this.x = event.clientX,
-                    this.y = event.clientY,
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                myAlert: function () {
+                    alert("アラート");
                 }
             }
         })
