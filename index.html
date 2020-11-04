@@ -9,8 +9,11 @@
     <script src="vue.js"></script>
     <div id="app">
         <p>{{number}}回クリック</p>
+        <p>{{number2}}回クリック</p>
         <button v-on:click="plus">クリック</button>
+        <button v-on:click="plus2">クリック2</button>
         <p>{{ changeMessage }}</p>
+        <p>{{ changeMessageMethod() }}</p>
         <p v-on:mousemove="change">aaaaaaaaaaaaaa
             <span v-on:mousemove.stop>jjjjjjjjjjjjjjjjjj</span>
         </p>
@@ -23,6 +26,7 @@
             el: "#app",
             data: {
                 number: 0,
+                number2: 0,
                 x: 0,
                 y: 0,
             },
@@ -30,16 +34,24 @@
                 plus: function() {
                     this.number = this.number + 1
                 },
+                plus2: function() {
+                    this.number2 = this.number2 + 1
+                },
                 change: function(event) {
                     this.x = event.clientX;
                     this.y = event.clientY;
                 },
                 myAlert: function () {
                     alert("アラート");
+                },
+                changeMessageMethod: function () {
+                    console.log("method");
+                    return this.number >= 3 ? "3以上" : "3以下"
                 }
             },
             computed: {
                 changeMessage: function() {
+                    console.log("computed");
                     return this.number >= 3 ? "3以上" : "3以下"
                 }
             }
