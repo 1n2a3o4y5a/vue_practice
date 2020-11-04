@@ -10,6 +10,7 @@
     <div id="app">
         <p>{{number}}回クリック</p>
         <button v-on:click="plus">クリック</button>
+        <p>{{ changeMessage }}</p>
         <p v-on:mousemove="change">aaaaaaaaaaaaaa
             <span v-on:mousemove.stop>jjjjjjjjjjjjjjjjjj</span>
         </p>
@@ -35,6 +36,11 @@
                 },
                 myAlert: function () {
                     alert("アラート");
+                }
+            },
+            computed: {
+                changeMessage: function() {
+                    return this.number >= 3 ? "3以上" : "3以下"
                 }
             }
         })
