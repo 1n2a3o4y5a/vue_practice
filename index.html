@@ -8,25 +8,20 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
-        <button @click="change(1)">クリック1</button>
-        <button @click="change(2)">クリック2</button>
-        <div v-bind:class="{ active: isActive }">afaaaaaaaaaaa</div>
+        <button @click="change">クリック1</button>
+        <button >クリック2</button>
+        <div :style="{'background-color': bgColor}">afaaaaaaaaaaa</div>
     </div>
 
     <script>
         new Vue ({
             el: "#app",
             data: {
-                return {
-                    isActive: {
-                        1:{backgroundcolor: "red"},
-                        2:{backgroundcolor: "blue"},
-                    },
-                },
+                bgColor: 'blue',
             },
-            method: {
-                change: function(n) {
-                    this.isActive = this.isActive
+            methods: {
+                change() {
+                    this.bgColor = 'red';
                 }
             }
         })
