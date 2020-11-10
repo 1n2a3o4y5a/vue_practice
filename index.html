@@ -8,21 +8,26 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
-        <button @click="change">クリック1</button>
-        <button >クリック2</button>
-        <div :style="{'background-color': bgColor}">afaaaaaaaaaaa</div>
+        <button @click="change">change</button>
+        <p v-if="ok">OK</p>
+        <p v-else="ok">notOK</p>
     </div>
 
     <script>
         new Vue ({
             el: "#app",
             data: {
-                bgColor: 'blue',
+                ok: true,
             },
             methods: {
                 change() {
-                    this.bgColor = 'red';
-                }
+                    console.log(this.ok);
+                    if (this.ok) {
+                        this.ok = false;
+                    } else {
+                        this.ok = true;
+                    }
+                },
             }
         })
     </script>
