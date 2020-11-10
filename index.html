@@ -11,6 +11,10 @@
         <button @click="change">change</button>
         <p v-if="ok">OK</p>
         <p v-else="ok">notOK</p>
+
+        <ul>
+            <li v-for="(language,index) in list">{{index}}:{{language}}</li>
+        </ul>
     </div>
 
     <script>
@@ -18,6 +22,7 @@
             el: "#app",
             data: {
                 ok: true,
+                list: ['Java','PHP','Ruby','Python']
             },
             methods: {
                 change() {
