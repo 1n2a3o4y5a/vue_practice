@@ -8,13 +8,18 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
-        <button @click="change">change</button>
-        <p v-if="ok">OK</p>
-        <p v-else="ok">notOK</p>
+        <button @click="remove">削除</button>
+        <div v-for="l in list" :key="l">
+            <p>{{l}}</p>
+            <input type="text">
+        </div>
 
-        <ul>
-            <li v-for="(language,index) in list">{{index}}:{{language}}</li>
-        </ul>
+        <hr>
+        <div v-for="l in list">
+            <p>{{l}}</p>
+            <input type="text">
+        </div>
+
     </div>
 
     <script>
@@ -25,15 +30,10 @@
                 list: ['Java','PHP','Ruby','Python']
             },
             methods: {
-                change() {
-                    console.log(this.ok);
-                    if (this.ok) {
-                        this.ok = false;
-                    } else {
-                        this.ok = true;
-                    }
-                },
-            }
+                remove: function() {
+                    this.list.shift();
+                }
+            },
         })
     </script>
 </body>
