@@ -8,17 +8,6 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
-        <button @click="remove">削除</button>
-        <div v-for="l in list" :key="l">
-            <p>{{l}}</p>
-            <input type="text">
-        </div>
-
-        <hr>
-        <div v-for="l in list">
-            <p>{{l}}</p>
-            <input type="text">
-        </div>
 
     </div>
 
@@ -26,14 +15,12 @@
         new Vue ({
             el: "#app",
             data: {
-                ok: true,
-                list: ['Java','PHP','Ruby','Python']
+                name: "カカかカッカかカカかかk",
             },
             methods: {
-                remove: function() {
-                    this.list.shift();
-                }
+                
             },
+            template: '<p>{{name}}</p>'
         })
     </script>
 </body>
