@@ -8,7 +8,9 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
-        aaaaaaaa
+        {{name}}
+        <button @click="change">change</button>
+
     </div>
 
     <script>
@@ -18,9 +20,29 @@
                 name: "カカかカッカかカカかかk",
             },
             methods: {
-                
+                change() {
+                    this.name = "やっっほ"
+                }
             },
-            template: '<p>{{name}}</p>'
+            beforeCreate: function() {
+                console.log('beforecreate');
+            },
+            created: function() {
+                console.log('created');
+            },
+            beforeMount: function() {
+                console.log('beforemount');
+            },
+            mounted: function() {
+                console.log('mounted');
+            },
+            beforeUpdate: function() {
+                console.log('beforeupdate');
+            },
+            updated: function() {
+                console.log('updated');
+            }
+
         })
     </script>
 </body>
