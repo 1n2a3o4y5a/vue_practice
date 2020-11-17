@@ -16,12 +16,29 @@
     <script>
         new Vue ({
             el: "#app",
-            data: {
-                name: "カカかカッカかカカかかk",
+            data() {
+                return {
+
+                    name: "カカかカッカかカカかかk",
+                }
+            },
+            computed: {
+                nameHnadler: {
+                    get() {
+                        return this.name;
+                    },
+                    set(val) {
+                        this.name = val;
+                    }
+                }
             },
             methods: {
                 change() {
-                    this.name = "やっっほ"
+                    if (name = "カカかカッカかカカかかk") {
+                        this.name = "やっっほ";
+                    } else {
+                        this.name = "カカかカッカかカカかかk";
+                    }
                 }
             },
             beforeCreate: function() {
