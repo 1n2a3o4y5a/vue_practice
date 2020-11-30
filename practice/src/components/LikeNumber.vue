@@ -21,3 +21,10 @@ export default {
   }
 }
 </script>
+
+<style>
+    div {
+        border: 2px solid red;
+    }
+
+</style>

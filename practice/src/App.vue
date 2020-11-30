@@ -3,17 +3,13 @@
 </template>
 
 <script>
-import LikeNumber from './components/LikeNumber.vue'
 
-export default {
-  components: { LikeNumber },
-  data() {
-    return {
-      number: 0,
-    }
-  }
-}
 </script>
 
-<style>
+
+<style scoped>
+    div {
+        border: 2px solid blue;
+    }
+
 </style>
