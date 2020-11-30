@@ -1,7 +1,9 @@
 <template>
 <div>
+    <div>
     <p>いいね({{ number }})</p>
     <button @click="like">いいねする</button>
+    </div>
 </div>
   
 </template>
@@ -22,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style socped>
     div {
         border: 2px solid red;
     }

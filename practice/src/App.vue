@@ -1,6 +1,11 @@
 <template>
+<div>
+  <div>
   <LikeNumber></LikeNumber>
+  </div>
+</div>
 </template>
+
 
 <script>
 
