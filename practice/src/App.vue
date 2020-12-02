@@ -1,14 +1,27 @@
 <template>
 <div>
-  <div>
-  <LikeNumber></LikeNumber>
-  </div>
+  <h1>いいね</h1>
+  <span>
+  <LikeNumber lang="language"></LikeNumber>
+  </span>
 </div>
 </template>
 
 
 <script>
-
+    
+export default {
+  data() {
+    return {
+      language: [
+        'Java',
+        'PHP',
+        'Python',
+        'Ruby',
+      ]
+    }
+  }
+}
 </script>
 
 

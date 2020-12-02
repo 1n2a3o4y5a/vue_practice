@@ -1,8 +1,10 @@
 <template>
 <div>
-    <div>
     <p>いいね({{ number }})</p>
     <button @click="like">いいねする</button>
+
+    <div v-for="l in lang" :key="l">
+        <p>{{l}}</p>
     </div>
 </div>
   
@@ -11,20 +13,21 @@
 <script>
 
 export default {
-  data() {
-    return {
-      number: 0,
+    props: ['lang'],
+    data() {
+        return {
+        number: 0,
+        }
+    },
+    methods: {
+        like() {
+            this.number += 1;
+        }
     }
-  },
-  methods: {
-      like() {
-          this.number += 1;
-      }
-  }
 }
 </script>
 
-<style socped>
+<style scoped>
     div {
         border: 2px solid red;
     }
