@@ -13,7 +13,12 @@
 <script>
 
 export default {
-    props: ['lang'],
+    props: {
+        lang: {
+            type: Array,
+            default: () => ['Django'],
+        }
+    },
     data() {
         return {
         number: 0,

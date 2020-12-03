@@ -3,6 +3,7 @@
   <h1>いいね</h1>
   <span>
   <LikeNumber :lang="language"></LikeNumber>
+  <LikeNumber ></LikeNumber>
   </span>
 </div>
 </template>
