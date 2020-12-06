@@ -3,9 +3,11 @@
     <p>いいね({{ number }})</p>
     <button @click="like">いいねする</button>
 
-    <div v-for="l in lang" :key="l">
+    <h2 v-for="l in lang" :key="l">
         <p>{{l}}</p>
-    </div>
+    </h2>
+
+    <button @click="plus">わっしょい</button>
 </div>
   
 </template>
@@ -27,6 +29,9 @@ export default {
     methods: {
         like() {
             this.number += 1;
+        },
+        plus () {
+            this.$emit('plus', 600);
         }
     }
 }
