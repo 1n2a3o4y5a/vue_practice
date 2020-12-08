@@ -6,11 +6,16 @@
   </span>
 
   <h1>{{num}}</h1>
+  <hr>
 
 
   <LikeHeader>
     <h1>わっしょい</h1>
   </LikeHeader>
+  <hr>
+
+<input type="text" v-model="val">
+
 </div>
 </template>
 
@@ -29,6 +34,28 @@ export default {
         'Ruby',
       ],
       num: 0,
+      vali: '',
+    }
+  },
+  watch: {
+    valiWatch(val) {
+      this.vali = val
+    }
+  },
+  computed: {
+    valiHnadler: {
+      immediate: true,
+      set() {
+        return this.vali
+      },
+      get(val) {
+        let check = /^([1-9]\d*|0)$/
+        console.log(check.test(val))
+        if (check.test(val)) {
+          return this.vali
+        }
+        return ''
+      },
     }
   },
   methods: {
