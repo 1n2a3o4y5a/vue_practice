@@ -14,7 +14,7 @@
   </LikeHeader>
   <hr>
 
-<input type="text" v-model="val">
+<input type="text" v-model="vali" value="">
 
 </div>
 </template>
@@ -38,24 +38,13 @@ export default {
     }
   },
   watch: {
-    valiWatch(val) {
-      this.vali = val
-    }
-  },
-  computed: {
-    valiHnadler: {
-      immediate: true,
-      set() {
-        return this.vali
-      },
-      get(val) {
-        let check = /^([1-9]\d*|0)$/
-        console.log(check.test(val))
+    vali(val) {
+      let check = /^([1-9]\d*|0)$/
         if (check.test(val)) {
-          return this.vali
+          this.vali = val
+        } else {
+          this.vali = val.slice(0,-1)
         }
-        return ''
-      },
     }
   },
   methods: {
