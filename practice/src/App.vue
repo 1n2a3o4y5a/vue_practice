@@ -1,16 +1,15 @@
 <template>
 <div>
-  <h1>いいね</h1>
-  <span>
-  <LikeNumber :lang="language" @plus="func"></LikeNumber>
-  </span>
-
-  <h1>{{num}}</h1>
-  <hr>
-
-
   <LikeHeader>
-    <h1>わっしょい</h1>
+    <template v-slot:header>
+      <h1>わっしょい</h1>
+    </template>
+    <template v-slot:body>
+      <h1>わっしょいわっしょい</h1>
+    </template>
+    <template v-slot:footer>
+      <h1>わっしょいわっしょいわっしょい</h1>
+    </template>
   </LikeHeader>
   <hr>
 
