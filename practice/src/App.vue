@@ -1,13 +1,13 @@
 <template>
 <div>
   <LikeHeader>
-    <template v-slot:header>
+    <template #header>
       <h1>わっしょい</h1>
     </template>
-    <template v-slot:body>
+    <template #body>
       <h1>わっしょいわっしょい</h1>
     </template>
-    <template v-slot:footer>
+    <template #footer>
       <h1>わっしょいわっしょいわっしょい</h1>
     </template>
   </LikeHeader>
