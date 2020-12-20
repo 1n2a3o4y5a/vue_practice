@@ -15,6 +15,16 @@
 
 <input type="text" v-model="vali" value="">
 
+<label for="1">1</label>
+<input type="checkbox" id="1" value="1" v-model="li">
+
+<label for="2">2</label>
+<input type="checkbox" id="2" value="2" v-model="li">
+
+<label for="3">3</label>
+<input type="checkbox" id="3" value="3" v-model="li">
+{{li}}
+
 </div>
 </template>
 
@@ -34,6 +44,7 @@ export default {
       ],
       num: 0,
       vali: '',
+      li: []
     }
   },
   watch: {
