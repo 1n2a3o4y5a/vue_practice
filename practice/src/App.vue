@@ -1,8 +1,8 @@
 <template>
 <div>
   <BaseInput 
-  :value="eventData.title"
-  @input="evetData.title = $event"
+  :value="eventData"
+  @input="eventData = $event"
   ></BaseInput>
 </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   components: {BaseInput},
   data() {
     return {
-      
+      eventData: ''
     }
   },
   watch: {

@@ -2,11 +2,10 @@
 <div>
     <input 
     type="text"
-    id="title"
     :value="value"
     @input="$emit('input', $event.target.value)"
     >
-    
+    <p>{{value}}</p>
 </div>
 </template>
 
