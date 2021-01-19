@@ -1,24 +1,24 @@
 <template>
-<div>
-  <BaseInput 
-  :value="eventData"
-  @input="eventData = $event"
-  ></BaseInput>
-
-  <p v-border>ふぁkjfかsjdfkじゃs</p>
-</div>
+  <div>
+    <ul>
+      <li v-for="(l, i) in language" :key="i">
+        <check-box v-model="checked"></check-box>
+      </li>
+    </ul>
+  </div>
 </template>
 
 
 <script>
-import BaseInput from './components/BaseInput'
+import CheckBox from './components/CheckBox.vue'
 
     
 export default {
-  components: {BaseInput},
+  components: {CheckBox},
   data() {
     return {
-      eventData: ''
+      language: ['Java', 'Python', 'PHP', 'Ruby'],
+      checked: false
     }
   },
   watch: {

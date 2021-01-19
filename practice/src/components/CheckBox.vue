@@ -3,15 +3,17 @@
         <input 
         type="checkbox"
         :value="value"
+        :name="naem"
+        :checked="checked"
         @input="$emit('input', $event.target.value)"
         >
-        <p>{{value}}</p>
+       {{value}}
     </div>
 </template>
 
 <script>
 export default {
-    props: ['value']
+    props: ['value', 'name', 'checked']
     
 }
 </script>
