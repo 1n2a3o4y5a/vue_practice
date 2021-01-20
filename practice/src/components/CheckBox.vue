@@ -5,15 +5,14 @@
         :value="value"
         :name="naem"
         :checked="checked"
-        @input="$emit('input', $event.target.value)"
         >
        {{value}}
     </div>
 </template>
 
-<script>
+<script>ooo
 export default {
-    props: ['value', 'name', 'checked']
+    props: ['value', 'name', 'checked'],
     
 }
 </script>

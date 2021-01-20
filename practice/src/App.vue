@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="(l, i) in language" :key="i">
-        <check-box v-model="checked"></check-box>
+        <check-box></check-box>
       </li>
     </ul>
   </div>
@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       language: ['Java', 'Python', 'PHP', 'Ruby'],
-      checked: false
     }
   },
   watch: {
