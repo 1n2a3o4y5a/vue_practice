@@ -2,18 +2,31 @@
     <div>
         <input 
         type="checkbox"
-        :value="value"
-        :name="naem"
-        :checked="checked"
+        :value="inputValue"
+        v-model="valueHandler"
         >
-       {{value}}
+       {{inputValue}}
     </div>
 </template>
 
-<script>ooo
+<script>
 export default {
-    props: ['value', 'name', 'checked'],
-    
+    props: {
+        inputValue: {
+            type: String,
+            default: ''
+        }
+    },
+    computed: {
+        valueHandler: {
+            get() {
+                return this.inputValue
+            },
+            set(val) {
+                this.$emit('input', val)
+            }
+        }
+    }
 }
 </script>
 
