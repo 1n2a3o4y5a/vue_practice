@@ -3,7 +3,7 @@
     {{checkedLists}}
     <ul>
       <li v-for="(l, i) in language" :key="i">
-        <check-box :input-value="l" @input="update" :cheked-lists="checkedLists"></check-box>
+        <check-box :input-value="l" @input="update" v-model="checkedListsHandler"></check-box>
       </li>
     </ul>
   </div>
@@ -22,8 +22,15 @@ export default {
       checkedLists: []
     }
   },
-  watch: {
-    
+  computed: {
+    checkedListsHandler: {
+      get() {
+        return this.checkedLists;
+      },
+      set(value) {
+        this.update(value)
+      },
+    },
   },
   methods: {
     update(v) {
