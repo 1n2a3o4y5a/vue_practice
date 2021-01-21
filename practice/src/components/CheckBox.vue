@@ -6,7 +6,6 @@
         type="checkbox"
         :name="name"
         :value="inputValue"
-        class="input border-2 border-gray-500 mr-2"
         />
         <label>
         </label>
