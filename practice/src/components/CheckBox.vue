@@ -1,31 +1,43 @@
 <template>
-    <div>
-        <input 
+    <div class="">
+        <input
+        :id="name + inputValue"
+        v-model="checked"
         type="checkbox"
+        :name="name"
         :value="inputValue"
-        v-model="valueHandler"
-        >
-       {{inputValue}}
-    </div>
+        class="input border-2 border-gray-500 mr-2"
+        />
+        <label>
+        </label>
+  </div>
 </template>
 
 <script>
 export default {
     props: {
-        inputValue: {
+        name: {
             type: String,
-            default: ''
-        }
+            default: '',
+        },
+        value: {
+            type: [Boolean, Array],
+            default: () => [],
+        },
+        inputValue: {
+            type: [String, Number, Boolean],
+            default: true,
+        },
     },
     computed: {
-        valueHandler: {
+        checked: {
             get() {
-                return this.inputValue
+                return this.value;
             },
-            set(val) {
-                this.$emit('input', val)
-            }
-        }
+            set(v) {
+                this.$emit('input', v);
+            },
+        },
     }
 }
 </script>
