@@ -1,15 +1,15 @@
 <template>
     <div class="">
-        <input
-        :id="name + inputValue"
-        v-model="checked"
-        type="checkbox"
-        :name="name"
-        :value="inputValue"
-        />
-        <label>
-        </label>
-  </div>
+    <input
+    :id="name + inputValue"
+    v-model="checked"
+    type="checkbox"
+    :name="name"
+    :value="inputValue"
+    />
+    <label>
+    </label>
+    </div>
 </template>
 
 <script>
